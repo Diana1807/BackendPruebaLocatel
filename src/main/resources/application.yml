@@ -1,0 +1,34 @@
+server:
+  port: 9085
+  ssl:
+    enabled: false
+    key-store: src/main/resources/springbootSSL.pfx
+    key-store-password: SpringBootSSL
+    key-store-type: PKCS12
+  error:
+    include-stacktrace: never
+ 
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sistema_financiero
+    username: root
+    password: Ru7ina5Albeiro
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+
+my:
+  security:
+    enabled: true
+  timezone: "America/Bogota"
+  issuer: "www.cruzrojabogota.org.co"
+  token:
+    auth:
+      path: "/v1.0/oauth/client_credential/accesstoken"
+    secret: "prueba de secret api sistema financiero"
+    expires-in: 3600
+  excluded:
+    path: ""
